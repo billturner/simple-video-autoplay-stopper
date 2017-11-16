@@ -1,10 +1,17 @@
 // in case there are multiple videos, let's get all of 'em
-const playerWrappers = [
-  ...document.body.querySelectorAll('.media__video'),
-  ...document.body.querySelectorAll('.cnnplayer')
+const playerSelectors = [
+  '.media__video',
+  '.cnnplayer'
 ];
 
+const playerElements = playerSelectors.reduce((acc, selector) => {
+  return [
+    ...acc,
+    ...document.body.querySelectorAll(selector)
+  ];
+}, []);
+
 // now, delete them from the DOM
-playerWrappers.forEach(player => {
-  player.parentNode.removeChild(player);
+playerElements.forEach(el => {
+  el.parentNode.removeChild(el);
 });
