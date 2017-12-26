@@ -1,16 +1,20 @@
 {
   "manifest_version": 2,
   "name": "Simple Video Autoplay Stopper",
-  "description": "A very minimal extension to stop autoplaying videos on CNN",
-  "version": "1.0",
+  "description": "A very minimal extension to stop autoplaying videos on CNN & BBC websites",
+  "version": "1.1",
   "permissions": [
     "tabs",
-    "*://*.cnn.com/*"
+    "*://*.cnn.com/*",
+    "*://*.bbc.com/*",
+    "*://*.bbc.co.uk/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "*://*.cnn.com/*"
+        "*://*.cnn.com/*",
+        "*://*.bbc.com/*",
+        "*://*.bbc.co.uk/*"
       ],
       "js": ["content.js"]
     }
